@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+
+<!-- รองรับมือถือ -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy New Year ✨</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(circle at 50% 20%, #20213d 0%, #0b0c1b 45%, #03040b 100%);
+    color: #fff;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CANVAS พลุ
+========================================================= */
+#fireworks {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ดาว
+========================================================= */
+.stars {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fff;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.15;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+.main {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================================
+   กล่องหลัก
+========================================================= */
+.container {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+
+    padding: 45px 35px;
+
+    background: rgba(8, 9, 25, 0.60);
+
+    border: 1px solid rgba(255, 215, 100, 0.25);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 50px rgba(255, 200, 60, 0.08),
+        inset 0 0 40px rgba(255, 255, 255, 0.02);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   ข้อความเล็ก
+========================================================= */
+.small-title {
+    color: #e7c66c;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    animation: fadeDown 1.5s ease forwards;
+}
+
+
+/* =========================================================
+   HAPPY NEW YEAR
+========================================================= */
+.title {
+    font-size: clamp(50px, 9vw, 100px);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    background: linear-gradient(
+        90deg,
+        #fff4b0,
+        #d8a82d,
+        #fff5c2,
+        #c89118,
+        #fff4b0
+    );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        goldMove 6s linear infinite,
+        fadeUp 2s ease forwards;
+
+    text-shadow: 0 0 30px rgba(255, 205, 80, 0.15);
+}
+
+@keyframes goldMove {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+
+/* =========================================================
+   ข้อความอวยพร
+========================================================= */
+.subtitle {
+    max-width: 650px;
+    margin: 30px auto;
+
+    color: #e8e8ef;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    opacity: 0;
+
+    animation: fadeIn 2s ease 1.5s forwards;
+}
+
+.highlight {
+    color: #ffd96a;
+}
+
+
+/* =========================================================
+   เส้นทอง
+========================================================= */
+.gold-line {
+    width: 120px;
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #e8b83c,
+        transparent
+    );
+
+    box-shadow: 0 0 10px rgba(255, 215, 100, 0.5);
+}
+
+
+/* =========================================================
+   ปุ่ม
+========================================================= */
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+.btn {
+    border: 1px solid rgba(255, 220, 120, 0.5);
+
+    background: rgba(255, 215, 100, 0.08);
+
+    color: #ffe69a;
+
+    padding: 13px 24px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(5px);
+}
+
+.btn:hover {
+    background: rgba(255, 215, 100, 0.18);
+
+    color: #fff4bd;
+
+    box-shadow:
+        0 0 20px rgba(255, 210, 80, 0.25);
+
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   การ์ดจดหมาย
+========================================================= */
+.letter-area {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 1s ease,
+        opacity 0.8s ease;
+
+    margin-top: 0;
+}
+
+.letter-area.open {
+    max-height: 500px;
+
+    opacity: 1;
+
+    margin-top: 30px;
+}
+
+.letter {
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 248, 210, 0.08),
+            rgba(255, 210, 80, 0.04)
+        );
+
+    border: 1px solid rgba(255, 215, 100, 0.25);
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 210, 80, 0.03),
+        0 0 30px rgba(255, 210, 80, 0.05);
+}
+
+.letter-title {
+    color: #ffe18a;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.letter-text {
+    color: #eeeef4;
+
+    line-height: 2;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    margin-top: 35px;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,0.4);
+}
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+.cursor-glow {
+    position: fixed;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 210, 80, 0.10),
+            rgba(255, 210, 80, 0) 70%
+        );
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media screen and (max-width: 600px) {
+
+    .main {
+        padding: 30px 12px;
+    }
+
+    .container {
+        padding: 35px 20px;
+
+        border-radius: 20px;
+    }
+
+    .small-title {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .letter {
+        padding: 22px 18px;
+    }
+
+    .letter-title {
+        font-size: 22px;
+    }
+
+    .letter-text {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 260px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CANVAS
+========================================================= -->
+
+<canvas id="fireworks"></canvas>
+
+
+<!-- =========================================================
+     ดาว
+========================================================= -->
+
+<div class="stars" id="stars"></div>
+
+
+<!-- =========================================================
+     แสงตามเมาส์
+========================================================= -->
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<div class="main">
+
+    <div class="container">
+
+        <div class="small-title">
+            A New Beginning
+        </div>
+
+
+        <h1 class="title">
+            Happy New Year
+        </h1>
+
+
+        <div class="gold-line"></div>
+
+
+        <p class="subtitle">
+            ขอให้ปีใหม่นี้เป็นจุดเริ่มต้นของเรื่องราวดี ๆ
+            <br>
+
+            ขอให้ทุกวันเต็มไปด้วย
+            <span class="highlight">รอยยิ้ม ความสุข</span>
+            และช่วงเวลาที่น่าจดจำ
+        </p>
+
+
+        <!-- ปุ่ม -->
+
+        <div class="buttons">
+
+            <button class="btn" id="letterButton">
+                💌 เปิดจดหมาย
+            </button>
+
+
+            <button class="btn" id="musicButton">
+                ♪ เปิดเพลง
+            </button>
+
+
+            <button class="btn" id="fireworkButton">
+                ✨ จุดพลุ
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             จดหมาย
+        ================================================== -->
+
+        <div class="letter-area" id="letterArea">
+
+            <div class="letter">
+
+                <div class="letter-title">
+                    ถึงพี่ลูน่า 💌
+                </div>
+
+
+                <div class="letter-text">
+
+                    ปีที่ผ่านมาอาจมีทั้งวันที่ดี
+                    และวันที่เหนื่อยบ้าง
+
+                    <br><br>
+
+                    แต่ไม่ว่าจะเกิดอะไรขึ้น
+                    ผมก็อยากให้ปีใหม่นี้
+                    เป็นปีที่เต็มไปด้วยเรื่องดี ๆ
+                    สำหรับพี่
+
+                    <br><br>
+
+                    ขอให้พี่ได้พบกับผู้คนดี ๆ
+                    ได้ทำในสิ่งที่ชอบ
+                    และมีความสุขกับทุกวัน
+                    และเล่นเกมกับผมไปนานนะครับ
+
+                    <br><br>
+
+                    <span class="highlight">
+                        Happy New Year ✨
+                    </span>
+
+                    <br>
+
+                    ขอให้ปีนี้ใจดีกับพี่มาก ๆ นะครับ
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+             ✨ 
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     AUDIO
+
+     เปลี่ยนชื่อไฟล์ music.mp3 เป็นเพลงของคุณได้
+========================================================= -->
+
+<audio id="bgMusic" loop>
+    <source src="เพลงพื้นหลัง.mp4" type="audio/mpeg">
+</audio>
+
+
+\
+<script>
+
+/* =========================================================
+   สร้างดาว
+========================================================= */
+
+var stars = document.getElementById("stars");
+
+var i;
+
+for (i = 0; i < 100; i++) {
+
+    var star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    star.style.opacity =
+        Math.random();
+
+    stars.appendChild(star);
+}
+
+
+/* =========================================================
+   เอฟเฟกต์เมาส์
+========================================================= */
+
+var cursorGlow =
+    document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove", function(e) {
+
+    cursorGlow.style.left = e.clientX + "px";
+
+    cursorGlow.style.top = e.clientY + "px";
+
+});
+
+
+/* =========================================================
+   เปิดจดหมาย
+========================================================= */
+
+var letterButton =
+    document.getElementById("letterButton");
+
+var letterArea =
+    document.getElementById("letterArea");
+
+letterButton.onclick = function() {
+
+    if (letterArea.className.indexOf("open") === -1) {
+
+        letterArea.className += " open";
+
+        letterButton.innerHTML =
+            "💌 ปิดจดหมาย";
+
+    } else {
+
+        letterArea.className =
+            letterArea.className.replace(" open", "");
+
+        letterButton.innerHTML =
+            "💌 เปิดจดหมาย";
+    }
+
+};
+
+
+/* =========================================================
+   ระบบเพลง
+========================================================= */
+
+var music =
+    document.getElementById("bgMusic");
+
+var musicButton =
+    document.getElementById("musicButton");
+
+var musicPlaying = false;
+
+musicButton.onclick = function() {
+
+    if (musicPlaying === false) {
+
+        music.play();
+
+        musicPlaying = true;
+
+        musicButton.innerHTML =
+            "🔊 ปิดเพลง";
+
+    } else {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        musicButton.innerHTML =
+            "♪ เปิดเพลง";
+
+    }
+
+};
+
+
+/* =========================================================
+   CANVAS FIREWORKS
+========================================================= */
+
+var canvas =
+    document.getElementById("fireworks");
+
+var ctx =
+    canvas.getContext("2d");
+
+var width;
+var height;
+
+function resizeCanvas() {
+
+    width = window.innerWidth;
+
+    height = window.innerHeight;
+
+    canvas.width = width;
+
+    canvas.height = height;
+}
+
+resizeCanvas();
+
+window.onresize = resizeCanvas;
+
+
+/* =========================================================
+   อนุภาคพลุ
+========================================================= */
+
+var particles = [];
+
+
+/* =========================================================
+   สร้างพลุ
+========================================================= */
+
+function createFirework(x, y) {
+
+    var count = 70;
+
+    var j;
+
+    for (j = 0; j < count; j++) {
+
+        var angle =
+            Math.PI * 2 * j / count;
+
+        var speed =
+            Math.random() * 5 + 2;
+
+        particles.push({
+
+            x: x,
+
+            y: y,
+
+            vx:
+                Math.cos(angle) * speed,
+
+            vy:
+                Math.sin(angle) * speed,
+
+            life: 100,
+
+            size:
+                Math.random() * 2 + 1
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   อัปเดตพลุ
+========================================================= */
+
+function updateFireworks() {
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+
+    var k;
+
+    for (k = particles.length - 1; k >= 0; k--) {
+
+        var p = particles[k];
+
+
+        p.x += p.vx;
+
+        p.y += p.vy;
+
+
+        p.vy += 0.04;
+
+        p.vx *= 0.99;
+
+        p.vy *= 0.99;
+
+
+        p.life -= 1;
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fillStyle =
+            "rgba(255,220,100," +
+            (p.life / 100) +
+            ")";
+
+
+        ctx.shadowBlur = 15;
+
+        ctx.shadowColor =
+            "#ffd95a";
+
+        ctx.fill();
+
+
+        if (p.life <= 0) {
+
+            particles.splice(k, 1);
+
+        }
+
+    }
+
+
+    ctx.shadowBlur = 0;
+
+    requestAnimationFrame(updateFireworks);
+
+}
+
+updateFireworks();
+
+
+/* =========================================================
+
+   พลุอัตโนมัติ
+========================================================= */
+
+function automaticFirework() {
+
+    var x =
+        Math.random() * width;
+
+    var y =
+        Math.random() *
+        (height * 0.55);
+
+    createFirework(x, y);
+
+}
+
+
+/* จุดพลุทุกประมาณ 2 วินาที */
+
+setInterval(function() {
+
+    automaticFirework();
+
+}, 2200);
+
+
+/* =========================================================
+   ปุ่มจุดพลุ
+========================================================= */
+
+var fireworkButton =
+    document.getElementById("fireworkButton");
+
+fireworkButton.onclick = function() {
+
+    createFirework(
+        width / 2,
+        height * 0.3
+    );
+
+};
+
+
+/* =========================================================
+   แตะหน้าจอมือถือเพื่อจุดพลุ
+========================================================= */
+
+document.addEventListener(
+    "touchstart",
+    function(e) {
+
+        if (e.touches.length > 0) {
+
+            var touch =
+                e.touches[0];
+
+            createFirework(
+                touch.clientX,
+                touch.clientY
+            );
+
+        }
+
+    },
+    false
+);
+
+
+/* =========================================================
+   คลิกเมาส์เพื่อจุดพลุ
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(e) {
+
+        /*
+           ไม่จุดพลุซ้ำเมื่อกดปุ่ม
+           เพราะปุ่มจุดพลุมีระบบของตัวเอง
+        */
+
+        if (
+            e.target.tagName !== "BUTTON"
+        ) {
+
+            createFirework(
+                e.clientX,
+                e.clientY
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   พลุเริ่มต้น
+========================================================= */
+
+setTimeout(function() {
+
+    createFirework(
+        width * 0.25,
+        height * 0.30
+    );
+
+}, 800);
+
+
+setTimeout(function() {
+
+    createFirework(
+        width * 0.75,
+        height * 0.25
+    );
+
+}, 1400);
+
+
+setTimeout(function() {
+
+    createFirework(
+        width * 0.50,
+        height * 0.20
+    );
+
+}, 2000);
+
+</script>
+
+</body>
+</html>
+```
+
+</body>
+</html>
